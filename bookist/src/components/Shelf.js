@@ -4,8 +4,9 @@ import { Component } from "react";
 class Shelf extends Component {
     render() {
         return (
-            <div>
-                <h3>shelf</h3>
+            <div className='shelf'>
+                <h3>Your Shelf</h3>
+                <button onClick={this.props.clearShelfFn}>clear shelf</button>
                 {this.props.shelfArr.map(el =>
                     <p>{el}</p>
                 )}

@@ -8,12 +8,12 @@ class BookList extends Component {
         return (
             <div>
             <h3>list</h3>
-            <div>
+            <div className='grid'>
                 {this.props.books.map(el =>
                         <div>
-                            <img src={el.img} alt={el.title} onClick={() => this.props.addToShelfFn(el.title)}></img>
-                            <p>{el.author}</p>
-                            <p>{el.title}</p>
+                            <img className='book-img' src={el.img} alt={el.title} onClick={() => this.props.addToShelfFn(el.title)}></img>
+                            <p className='discriptor'>{el.author}</p>
+                            <p className='discriptor'>{el.title}</p>
                         </div>
                 )}
             </div>

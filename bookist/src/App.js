@@ -26,7 +26,8 @@ class App extends Component {
   }
 
   filterBooks(input) {
-    this.setState({books: this.state.books.filter(input)})
+    let filteredBooks = this.state.books.filter(input)
+    this.setState({books: filteredBooks})
   }
 
   render() {
@@ -34,7 +35,6 @@ class App extends Component {
       <div className="App">
         <Header />
         <SearchBar filterBooks={this.filterBooks}/>
-        <button onClick={this.clearShelf}>test me</button>
         <div className='below-content'>
           <BookList books={this.state.books} addToShelfFn={this.addToShelf}/>
           <Shelf shelfArr={this.state.shelf} clearShelfFn={this.clearShelf}/>

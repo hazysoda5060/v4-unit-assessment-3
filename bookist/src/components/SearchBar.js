@@ -8,6 +8,8 @@ class SearchBar extends Component {
             userInput: ''
         }
         this.handleChange = this.handleChange.bind(this)
+        this.handleClick = this.handleClick.bind(this)
+        this.handleClear = this.handleClear.bind(this)
     }
 
     handleChange(value) {
@@ -18,14 +20,17 @@ class SearchBar extends Component {
         this.props.filterBooks(input)
     }
 
+    handleClear() {
+        this.setState({userInput: ''})
+        this.props.reset()
+    }
+
     render() {
-        console.log(this.state.userInput)
-        // console.log(this.props.filterBooks('learning'))
         return (
             <div>
-                <input onChange={(ev) => this.handleChange(ev.target.value)}></input>
+                <input value={this.state.userInput} onChange={(ev) => this.handleChange(ev.target.value)}></input>
                 <button onClick={() => this.handleClick(this.state.userInput)}>search</button>
-                <button>clear search</button>
+                <button onClick={this.handleClear}>clear search</button>
             </div>
         )
     }

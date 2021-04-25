@@ -20,6 +20,7 @@ class SearchBar extends Component {
 
     render() {
         console.log(this.state.userInput)
+        // console.log(this.props.filterBooks('learning'))
         return (
             <div>
                 <input onChange={(ev) => this.handleChange(ev.target.value)}></input>

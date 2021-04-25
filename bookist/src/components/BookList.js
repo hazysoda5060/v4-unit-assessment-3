@@ -1,9 +1,6 @@
 import { Component } from "react";
 
 class BookList extends Component {
-    constructor() {
-        super();
-    }
     render() {
         return (
             <div>

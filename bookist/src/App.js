@@ -28,8 +28,8 @@ class App extends Component {
   }
 
   // filterBooks(input) {
-  //   let filteredBooks = this.state.books.filter(function(item) {
-  //     return this.state.books.includes(item)
+  //   let filteredBooks = this.state.books.filter(function() {
+  //     return this.state.books.includes(input)
   //   })
 
   //   this.setState({books: filteredBooks})
@@ -39,11 +39,10 @@ class App extends Component {
     let filteredBooks = [];
 
     for(let i = 0; i < this.state.books.length; i++) {
-      if(this.state.books[i].title.hasOwnProperty(input)) {
+      if(this.state.books[i].title.toLowerCase().includes(input) || this.state.books[i].author.toLowerCase().includes(input)) {
         filteredBooks.push(this.state.books[i]);
       }
     }
-
     this.setState({books: filteredBooks});
   }
 
@@ -52,6 +51,7 @@ class App extends Component {
   }
 
   render() {
+    // console.log(this.state.books[0].title)
     return (
       <div className="App">
         <Header />

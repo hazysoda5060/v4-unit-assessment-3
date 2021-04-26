@@ -11,7 +11,7 @@
 }
 
 .shelf {
-  width: 38%;
+  width: 20%;
 }
 
 .grid {
@@ -21,6 +21,9 @@
   justify-content: space-around;
 	align-items: stretch;
 	align-content: space-around;
+  margin: 15px;
+  width: 80%;
+  height: 1%;
 }
 
 .book-img {

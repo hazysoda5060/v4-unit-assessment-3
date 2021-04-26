@@ -3,8 +3,6 @@ import { Component } from "react";
 class BookList extends Component {
     render() {
         return (
-            <div>
-            <h3>list</h3>
             <div className='grid'>
                 {this.props.books.map(el =>
                         <div key={el.id}>
@@ -13,7 +11,6 @@ class BookList extends Component {
                             <p className='discriptor'>{el.title}</p>
                         </div>
                 )}
-            </div>
             </div>
         )
     }
